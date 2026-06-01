@@ -1,0 +1,32 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: schedule
+spec:
+  version: v0.1.0
+  homepage: https://github.com/alicek106/kubectl-scheduler
+  shortDescription: Simulate scheduling a Pod onto a Node (read-only).
+  description: |
+    Read-only simulation of whether a Pod could be scheduled onto a specific
+    Node — and, if not, which filter blocks it and why. Runs the real in-tree
+    kube-scheduler Filter plugins (pinned to v1.32) against a read-only cluster
+    snapshot. It never creates, patches, binds, or changes anything.
+
+    Best-effort, NOT identical to your cluster's scheduler: Filter stage only
+    (no scoring / no preemption), pinned scheduler version, default profile
+    only. Unchecked filters are surfaced as SKIPPED, never assumed to pass.
+
+    Usage: kubectl schedule <pod> <node> [-n <namespace>]
+  caveats: |
+    Currently published for Apple Silicon macOS (darwin/arm64) only.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/alicek106/kubectl-scheduler/releases/download/v0.1.0/kubectl-schedule_v0.1.0_darwin_arm64.tar.gz
+      sha256: d310712dc04c0f43caa789435de94323b4e110e07e6af78037d1fb1c8f97d8f4
+      bin: kubectl-schedule
+      files:
+        - from: kubectl-schedule
+          to: .

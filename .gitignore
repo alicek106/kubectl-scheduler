@@ -1,0 +1,8 @@
+# build artifacts
+/dist/
+
+# local tooling / scratch (not part of the published project)
+/.claude/
+/_workspace/
+CLAUDE.md
+PLANNING.md

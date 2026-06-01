@@ -8,6 +8,31 @@ specific Node, and—if not—**which filter blocks it and why**.
 It runs the *actual* in-tree kube-scheduler Filter plugins (pinned to v1.32) against a
 read-only snapshot of your cluster. It never creates, patches, binds, or changes anything.
 
+## Install (krew, Apple Silicon macOS only)
+
+Currently packaged for `darwin/arm64` only. Requires [krew](https://krew.sigs.k8s.io/).
+
+Build the archive locally and install it without a release:
+
+```
+make dist                                    # produces dist/kubectl-schedule_v0.1.0_darwin_arm64.tar.gz
+kubectl krew install \
+  --manifest=plugins/schedule.yaml \
+  --archive=dist/kubectl-schedule_v0.1.0_darwin_arm64.tar.gz
+```
+
+Or, once a matching GitHub release exists, install from the manifest URL:
+
+```
+kubectl krew install --manifest-url=https://github.com/alicek106/kubectl-scheduler/raw/main/plugins/schedule.yaml
+```
+
+Without krew, just drop the binary on your `PATH` as `kubectl-schedule`:
+
+```
+make build && cp dist/kubectl-schedule /usr/local/bin/
+```
+
 ## Usage
 
 ```

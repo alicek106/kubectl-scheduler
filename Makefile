@@ -1,6 +1,6 @@
 # kubectl-scheduler — build & package (Apple Silicon macOS / darwin-arm64 only)
 
-VERSION  ?= v0.1.0
+VERSION  ?= v0.1.1
 BIN      := kubectl-schedule
 DIST     := dist
 ARCHIVE  := $(DIST)/$(BIN)_$(VERSION)_darwin_arm64.tar.gz

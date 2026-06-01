@@ -15,10 +15,10 @@ Currently packaged for `darwin/arm64` only. Requires [krew](https://krew.sigs.k8
 Build the archive locally and install it without a release:
 
 ```
-make dist                                    # produces dist/kubectl-schedule_v0.1.0_darwin_arm64.tar.gz
+make dist                                    # produces dist/kubectl-schedule_v0.1.1_darwin_arm64.tar.gz
 kubectl krew install \
   --manifest=plugins/schedule.yaml \
-  --archive=dist/kubectl-schedule_v0.1.0_darwin_arm64.tar.gz
+  --archive=dist/kubectl-schedule_v0.1.1_darwin_arm64.tar.gz
 ```
 
 Or, once a matching GitHub release exists, install from the manifest URL:

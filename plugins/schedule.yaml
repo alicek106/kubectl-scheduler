@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: schedule
 spec:
-  version: v0.1.0
+  version: v0.1.1
   homepage: https://github.com/alicek106/kubectl-scheduler
   shortDescription: Simulate scheduling a Pod onto a Node (read-only).
   description: |
@@ -24,8 +24,8 @@ spec:
         matchLabels:
           os: darwin
           arch: arm64
-      uri: https://github.com/alicek106/kubectl-scheduler/releases/download/v0.1.0/kubectl-schedule_v0.1.0_darwin_arm64.tar.gz
-      sha256: d310712dc04c0f43caa789435de94323b4e110e07e6af78037d1fb1c8f97d8f4
+      uri: https://github.com/alicek106/kubectl-scheduler/releases/download/v0.1.1/kubectl-schedule_v0.1.1_darwin_arm64.tar.gz
+      sha256: 3a6f707c444c697ae894d095dd0d50c4321691ddb12554ba6676da228bb00da7
       bin: kubectl-schedule
       files:
         - from: kubectl-schedule
